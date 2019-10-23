@@ -4,6 +4,7 @@ import org.omg.CORBA.INTERNAL;
 
 import javax.swing.*;
 import java.awt.*;
+import java.time.Year;
 import java.util.ArrayList;
 
 public class jumpSearch extends Thread {
@@ -13,6 +14,7 @@ public class jumpSearch extends Thread {
     private JTextArea textArea;
     private int arraypart;
     private JTextField tfResult;
+    private int found =1;
 
 
     public jumpSearch(ArrayList<Integer> data, int tofind, int arraypart,JTextArea textArea, JTextField tfResult) {
@@ -21,17 +23,46 @@ public class jumpSearch extends Thread {
         this.textArea = textArea;
         this.arraypart = arraypart;
         this.tfResult = tfResult;
+
+
     }
 
     @Override
     public void run() {
-        for (int i=0;i<data.size();i++)
+        String res = "";
+        int n =data.size();
+        int step = (int)Math.floor(Math.sqrt(n));
+        int prev=0;
+        while(data.get(Math.min(step,n)-1)< tofind)
         {
-                
+
+            prev =step;
+//            System.out.println(prev+"step: "+step);
+            step+=(int)Math.floor(Math.sqrt(n));
+//            System.out.println("stop"+step+" "+prev);
+            if(prev>=n){
+//                System.out.println("strop");
+                found =0;
+                break;
+            }
+        }
+//        System.out.println("prev"+prev);
+        while(data.get(prev)<tofind)
+        {
+            prev++;
+            if(prev == Math.min(step,n))
+            {
+                found=0;
+                break;
+            }
+        }
+//        System.out.println("sss ");
+        if(data.get(prev).equals(tofind))
+        {
+            res+=Integer.toString(prev);
         }
 
-
-
+        tfResult.setText(res);
 
 
     }
