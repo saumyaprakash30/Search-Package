@@ -8,7 +8,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="40de5" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+      <component id="40de5" class="javax.swing.JTextField" binding="tfArray">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -16,7 +16,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="14957" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+      <component id="14957" class="javax.swing.JTextField" binding="tfToFind">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -24,36 +24,36 @@
         </constraints>
         <properties/>
       </component>
-      <component id="7d7a8" class="javax.swing.JButton" binding="button1" default-binding="true">
+      <component id="7d7a8" class="javax.swing.JButton" binding="btnJump">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="Jump"/>
         </properties>
       </component>
-      <component id="fd6ad" class="javax.swing.JButton" binding="button2" default-binding="true">
+      <component id="fd6ad" class="javax.swing.JButton" binding="btnMway">
         <constraints>
           <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="m-way"/>
         </properties>
       </component>
-      <component id="796c5" class="javax.swing.JButton" binding="button3" default-binding="true">
+      <component id="796c5" class="javax.swing.JButton" binding="btnFib">
         <constraints>
           <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="Fib"/>
         </properties>
       </component>
-      <component id="7ff62" class="javax.swing.JButton" binding="button4" default-binding="true">
+      <component id="7ff62" class="javax.swing.JButton" binding="btnExp">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Button"/>
+          <text value="Exp"/>
         </properties>
       </component>
       <component id="54d5e" class="javax.swing.JLabel">
@@ -96,7 +96,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="ebe73" class="javax.swing.JTextArea" binding="textArea2" default-binding="true">
+          <component id="ebe73" class="javax.swing.JTextArea" binding="taRes2">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="50"/>
@@ -104,7 +104,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="d01f" class="javax.swing.JTextArea" binding="textArea3" default-binding="true">
+          <component id="d01f" class="javax.swing.JTextArea" binding="taRes4">
             <constraints>
               <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="50"/>
@@ -112,13 +112,15 @@
             </constraints>
             <properties/>
           </component>
-          <component id="e84c4" class="javax.swing.JTextArea" binding="textArea4" default-binding="true">
+          <component id="e84c4" class="javax.swing.JTextArea" binding="taRes3">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="2" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="50"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <text value=""/>
+            </properties>
           </component>
           <component id="5d32a" class="javax.swing.JTextField" binding="tfResult">
             <constraints>
