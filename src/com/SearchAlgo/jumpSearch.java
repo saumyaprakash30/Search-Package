@@ -46,7 +46,8 @@ public class jumpSearch extends Thread {
                 break;
             }
         }
-//        System.out.println("prev"+prev);
+        System.out.println("prev"+prev);
+        if(found!=0)
         while(data.get(prev)<tofind)
         {
             prev++;
@@ -57,12 +58,15 @@ public class jumpSearch extends Thread {
             }
         }
 //        System.out.println("sss ");
+        if(found!=0)
         if(data.get(prev).equals(tofind))
         {
-            res+=Integer.toString(prev);
+            System.out.println("found"+(arraypart+prev+3));
+            res+=Integer.toString((arraypart+prev+3));
+            tfResult.setText(res);
         }
 
-        tfResult.setText(res);
+
 
 
     }

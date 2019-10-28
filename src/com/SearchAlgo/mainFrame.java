@@ -56,13 +56,16 @@ public class mainFrame {
                     ArrayList<Integer> temp = new ArrayList<>();
                     for(int j=beg;j<=end;j++)
                     {
-                        temp.add(a.get(i));
+
+                        temp.add(a.get(j));
                     }
+                    jumpSearch jS[];
+                    jS = new jumpSearch[4];
                     for(int j=0;j<temp.size();j++){
-                        System.out.println("temp"+temp.get(j));
+                        System.out.println(i+"temp"+temp.get(j));
                     }
-                    jumpSearch j1 = new jumpSearch(temp,tofind,0,taRes1,tfResult);
-                    j1.start();
+                    jS[i] = new jumpSearch(temp,tofind,i,taRes1,tfResult);
+                    jS[i].start();
 
                 }
 
