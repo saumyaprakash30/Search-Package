@@ -2,6 +2,7 @@ package com.SearchAlgo;
 
 import org.omg.CORBA.INTERNAL;
 
+import javax.naming.InsufficientResourcesException;
 import javax.swing.*;
 import java.awt.*;
 import java.time.Year;
@@ -15,20 +16,30 @@ public class jumpSearch extends Thread {
     private int arraypart;
     private JTextField tfResult;
     private int found =1;
+    private int secElement;
 
 
-    public jumpSearch(ArrayList<Integer> data, int tofind, int arraypart,JTextArea textArea, JTextField tfResult) {
+
+    private String illustration="";
+
+
+    public jumpSearch(ArrayList<Integer> data, int tofind, int arraypart,JTextArea textArea, JTextField tfResult,int secElement) {
         this.data = data;
         this.tofind = tofind;
         this.textArea = textArea;
         this.arraypart = arraypart;
         this.tfResult = tfResult;
+        this.secElement = secElement;
+
 
 
     }
 
     @Override
     public void run() {
+
+        illustration+="\tThread - " + Integer.toString(arraypart)+"\n";
+        textArea.setText(illustration);
         String res = "";
         int n =data.size();
         int step = (int)Math.floor(Math.sqrt(n));
@@ -48,26 +59,31 @@ public class jumpSearch extends Thread {
         }
         System.out.println("prev"+prev);
         if(found!=0)
-        while(data.get(prev)<tofind)
-        {
-            prev++;
-            if(prev == Math.min(step,n))
+            while(data.get(prev)<tofind)
             {
-                found=0;
-                break;
+                prev++;
+                if(prev == Math.min(step,n))
+                {
+                    found=0;
+                    break;
+                }
             }
-        }
 //        System.out.println("sss ");
         if(found!=0)
-        if(data.get(prev).equals(tofind))
-        {
-            System.out.println("found"+(arraypart+prev+3));
-            res+=Integer.toString((arraypart+prev+3));
-            tfResult.setText(res);
-        }
+            while(prev<n)
+                if(data.get(prev).equals(tofind))
+                {
+                    System.out.println("found"+(arraypart*secElement+prev+1));
+                    res=Integer.toString((arraypart*secElement+prev+1));
+                    tfResult.setText(tfResult.getText()+" "+res);
+                    prev++;
+                }
 
 
 
 
+    }
+    public String getIllustration() {
+        return illustration;
     }
 }

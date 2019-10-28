@@ -17,12 +17,14 @@ public class mainFrame {
     private JPanel panel1;
     private JPanel drawPanel;
     private JTextArea taRes1;
-    private JTextArea taRes2;
-    private JTextArea taRes4;
-    private JTextArea taRes3;
     private JTextField tfResult;
+    private JTextArea textArea1;
+    private JTextArea textArea2;
+    private JTextArea textArea3;
+    private JTextArea textArea4;
 
     public mainFrame() {
+        JScrollPane j = new JScrollPane(taRes1);
 
 
 
@@ -31,7 +33,7 @@ public class mainFrame {
         btnJump.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                tfResult.setText("");
                 ArrayList<Integer> a = new ArrayList<Integer>();
                 int tofind =Integer.parseInt(tfToFind.getText());
                 String arrayElement = tfArray.getText();
@@ -46,6 +48,8 @@ public class mainFrame {
                 for(int i=0;i<a.size();i++)
                     System.out.println(a.get(i));
                 int k=a.size()/4;
+                jumpSearch jS[];
+                jS = new jumpSearch[4];
                 for(int i=0;i<4;i++)
                 {
                     int beg = i*k;
@@ -59,17 +63,35 @@ public class mainFrame {
 
                         temp.add(a.get(j));
                     }
-                    jumpSearch jS[];
-                    jS = new jumpSearch[4];
+
                     for(int j=0;j<temp.size();j++){
                         System.out.println(i+"temp"+temp.get(j));
                     }
-                    jS[i] = new jumpSearch(temp,tofind,i,taRes1,tfResult);
+                    jS[i] = new jumpSearch(temp,tofind,i,taRes1,tfResult,k);
                     jS[i].start();
 
                 }
+                tfArray.setText("");
+                for(int i=0;i<a.size();i++)
+                {
+                    tfArray.setText(tfArray.getText()+a.get(i)+" ");
+                }
+//                for(int i=0;i<4;i++)
+//                {
+//                    try
+//                    {
+//                        System.out.println("h");
+//                        jS[i].join();
+//                        System.out.println("h1");
+//                    }
+//                    catch (Exception e1)
+//                    {
+//                        System.out.println(e1);
+//                    }
+//                }
 
-
+                if(tfResult.getText().equals(""))
+                    tfResult.setText("Not Found !");
 
             }
         });
