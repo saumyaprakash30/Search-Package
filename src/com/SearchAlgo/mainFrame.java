@@ -18,7 +18,6 @@ public class mainFrame {
     private JPanel drawPanel;
     private JTextArea taRes1;
     private JTextField tfResult;
-    private JTextArea textArea1;
     private JTextArea textArea2;
     private JTextArea textArea3;
     private JTextArea textArea4;
@@ -71,6 +70,7 @@ public class mainFrame {
                     jS[i].start();
 
                 }
+                
                 tfArray.setText("");
                 for(int i=0;i<a.size();i++)
                 {
@@ -82,7 +82,7 @@ public class mainFrame {
 //                    {
 //                        System.out.println("h");
 //                        jS[i].join();
-//                        System.out.println("h1");
+//                        System.out.println("h1"+i);
 //                    }
 //                    catch (Exception e1)
 //                    {
@@ -93,6 +93,12 @@ public class mainFrame {
                 if(tfResult.getText().equals(""))
                     tfResult.setText("Not Found !");
 
+            }
+        });
+        btnExp.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                drawPanel.add(new JTextArea());
             }
         });
     }

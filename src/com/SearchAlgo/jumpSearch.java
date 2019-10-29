@@ -39,11 +39,13 @@ public class jumpSearch extends Thread {
     public void run() {
 
         illustration+="\tThread - " + Integer.toString(arraypart)+"\n";
-        textArea.setText(illustration);
+        //textArea.setText(illustration);
         String res = "";
         int n =data.size();
         int step = (int)Math.floor(Math.sqrt(n));
         int prev=0;
+        if(tofind<data.get(0))
+            return;
         while(data.get(Math.min(step,n)-1)< tofind)
         {
 
@@ -54,10 +56,11 @@ public class jumpSearch extends Thread {
             if(prev>=n){
 //                System.out.println("strop");
                 found =0;
-                break;
+//                break;
+                return;
             }
         }
-        System.out.println("prev"+prev);
+        System.out.println(arraypart+"prev"+prev);
         if(found!=0)
             while(data.get(prev)<tofind)
             {
@@ -65,7 +68,8 @@ public class jumpSearch extends Thread {
                 if(prev == Math.min(step,n))
                 {
                     found=0;
-                    break;
+//                    break;
+                    return;
                 }
             }
 //        System.out.println("sss ");
@@ -73,14 +77,15 @@ public class jumpSearch extends Thread {
             while(prev<n)
                 if(data.get(prev).equals(tofind))
                 {
-                    System.out.println("found"+(arraypart*secElement+prev+1));
+                    System.out.println(arraypart+"found"+(arraypart*secElement+prev+1));
                     res=Integer.toString((arraypart*secElement+prev+1));
                     tfResult.setText(tfResult.getText()+" "+res);
                     prev++;
                 }
 
 
-
+        return;
+//        System.out.println("end"+arraypart);
 
     }
     public String getIllustration() {
