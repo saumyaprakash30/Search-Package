@@ -20,17 +20,55 @@ public class mainFrame {
     private JTextArea taRes1;
     private JTextField tfResult;
     private JPanel panel2;
+    private JTextField tfnot;
     private int noOfThread;
 
     public mainFrame() {
-            panel2.setLayout(new BoxLayout(panel2,BoxLayout.Y_AXIS));
-            JTextArea ta1 = new JTextArea();
-            JScrollPane jsp = new JScrollPane(ta1,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        panel2.setLayout(new GridLayout(0,2));
+        panel2.setAutoscrolls(true);
+        String nof = tfnot.getText();
+        System.out.println(nof);
+        int tt = Integer.parseInt(nof);
+        System.out.println("tt"+tt);
+        JTextArea ta[] =new JTextArea[tt];
+        JScrollPane jsp;
+        for(int i=0;i<5;i++)
+        {
+            ta[i] = new JTextArea();
+            jsp = new JScrollPane(ta[i]);
+            panel2.add(ta[i]);
+
+        }
 
 
-            panel2.add(ta1);
-        JTextArea ta2 = new JTextArea(10,10);
-        panel2.add(ta2);
+
+
+
+//            JTextArea ta1 = new JTextArea();
+//
+//
+////            jsp = new JScrollPane(panel2);
+//            panel2.add(jsp);
+//
+//        JTextArea ta2 = new JTextArea();
+//        jsp = new JScrollPane(ta2);
+//        panel2.add(jsp);
+//        JTextArea ta3 = new JTextArea();
+//        jsp = new JScrollPane(ta3);
+//        panel2.add(jsp);
+//        JTextArea ta4 = new JTextArea();
+//        jsp = new JScrollPane(ta4);
+//        panel2.add(jsp);
+//        JTextArea ta5 = new JTextArea();
+//        jsp = new JScrollPane(ta5);
+//        panel2.add(jsp);
+//        JTextArea ta6 = new JTextArea();
+//        jsp = new JScrollPane(ta6);
+//        panel2.add(jsp);
+//        JTextArea ta7 = new JTextArea();
+//        jsp = new JScrollPane(ta7);
+//        panel2.add(jsp);
+
 
 
 
@@ -106,6 +144,18 @@ public class mainFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 drawPanel.add(new JTextArea());
+            }
+        });
+        btnMway.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+        btnFib.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
             }
         });
     }
