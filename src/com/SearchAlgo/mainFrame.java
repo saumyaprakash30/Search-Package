@@ -1,6 +1,7 @@
 package com.SearchAlgo;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -18,12 +19,18 @@ public class mainFrame {
     private JPanel drawPanel;
     private JTextArea taRes1;
     private JTextField tfResult;
-    private JTextArea textArea2;
-    private JTextArea textArea3;
-    private JTextArea textArea4;
+    private JPanel panel2;
+    private int noOfThread;
 
     public mainFrame() {
-        JScrollPane j = new JScrollPane(taRes1);
+            panel2.setLayout(new BoxLayout(panel2,BoxLayout.Y_AXIS));
+            JTextArea ta1 = new JTextArea();
+            JScrollPane jsp = new JScrollPane(ta1,JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
+
+            panel2.add(ta1);
+        JTextArea ta2 = new JTextArea(10,10);
+        panel2.add(ta2);
 
 
 
