@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bdda4baf-b816-489c-a23d-93df5f2a8274" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/jumpSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/jumpSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java" afterDir="false" />
-    </list>
+    <list default="true" id="bdda4baf-b816-489c-a23d-93df5f2a8274" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

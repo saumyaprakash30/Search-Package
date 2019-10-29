@@ -70,7 +70,7 @@ public class mainFrame {
                     jS[i].start();
 
                 }
-                
+
                 tfArray.setText("");
                 for(int i=0;i<a.size();i++)
                 {
