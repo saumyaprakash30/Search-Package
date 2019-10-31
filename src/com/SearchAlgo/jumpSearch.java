@@ -7,23 +7,20 @@ import javax.swing.*;
 import java.awt.*;
 import java.time.Year;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class jumpSearch extends Thread {
 
     private ArrayList<Integer> data;
     private int tofind;
-    private JTextArea textArea;
+    private JTextPane textArea;
     private int arraypart;
     private JTextField tfResult;
     private int found =1;
     private int secElement;
 
 
-
-    private String illustration="";
-
-
-    public jumpSearch(ArrayList<Integer> data, int tofind, int arraypart,JTextArea textArea, JTextField tfResult,int secElement) {
+    public jumpSearch(ArrayList<Integer> data, int tofind, int arraypart,JTextPane textArea, JTextField tfResult,int secElement) {
         this.data = data;
         this.tofind = tofind;
         this.textArea = textArea;
@@ -38,8 +35,7 @@ public class jumpSearch extends Thread {
     @Override
     public void run() {
 
-        illustration+="\tThread - " + Integer.toString(arraypart)+"\n";
-        //textArea.setText(illustration);
+        textArea.setText("Thread - "+(arraypart+1));
         String res = "";
         int n =data.size();
         int step = (int)Math.floor(Math.sqrt(n));
@@ -88,7 +84,5 @@ public class jumpSearch extends Thread {
 //        System.out.println("end"+arraypart);
 
     }
-    public String getIllustration() {
-        return illustration;
-    }
+
 }
