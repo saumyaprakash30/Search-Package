@@ -75,13 +75,16 @@ public class jumpSearch extends Thread {
                 {
                     System.out.println(arraypart+"found"+(arraypart*secElement+prev+1));
                     res=Integer.toString((arraypart*secElement+prev+1));
-                    tfResult.setText(tfResult.getText()+" "+res);
+                    if(tfResult.getText().equals("Not Found !"))
+                        tfResult.setText(res+" ");
+                    else
+                        tfResult.setText(tfResult.getText()+res+" ");
                     prev++;
                 }
 
 
+        System.out.println("end"+arraypart);
         return;
-//        System.out.println("end"+arraypart);
 
     }
 
