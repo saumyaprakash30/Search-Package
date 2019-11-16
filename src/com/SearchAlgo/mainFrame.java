@@ -1,6 +1,6 @@
 package com.SearchAlgo;
 
-import org.omg.PortableServer.THREAD_POLICY_ID;
+
 
 import javax.swing.*;
 import java.awt.*;
@@ -138,9 +138,7 @@ public class mainFrame {
 
                 else if(selected==1)
                 {
-                    //--------------------------fib Search ----------------------
-
-
+                    /////////
                     //----------thread pannel--------------
                     panel2.removeAll();
                     panel2.revalidate();
@@ -189,6 +187,10 @@ public class mainFrame {
                     fibosearch fbarr [] = new fibosearch[noOfThread+1];
                     JTextArea txtareaarr[] = new JTextArea[noOfThread];
 
+//                txtareaarr[0]=taRes1;
+//                txtareaarr[1]=taRes2;
+//                txtareaarr[2]=taRes3;
+//                txtareaarr[3]=taRes4;
                     int ta_counter=3;
                     for(r = 1; r < noOfThread ; r++)
                     {
@@ -210,11 +212,12 @@ public class mainFrame {
                         }
                     }
 
+                    fibosearch dummy = new fibosearch(arr,tofind,ta[ta.length-1],previdx,arr.length-1,tfResult,noOfThread,r);
                     // get other indexes
-                    if(fbarr[0].foundatindex>-1){
-                        int arx[] =fbarr[0].other_index(fbarr[0].foundatindex);
+                    if(dummy.foundatindex>-1){
+                        int arx[] = dummy.other_index(dummy.foundatindex);
                         tfResult.setText("i was found at index "+arx[0]+" <-to-> "+arx[1]);
-                        fbarr[0].foundatindex=Integer.MIN_VALUE;
+                        dummy.foundatindex=Integer.MIN_VALUE;
 
                     }
                     else {
@@ -226,6 +229,102 @@ public class mainFrame {
                         tfArray.setText(tfArray.getText()+a.get(i)+" ");
                     }
                     System.gc();
+
+                }
+                else if(selected==2)
+                {
+                    /////////
+                    //----------thread pannel--------------
+                    panel2.removeAll();
+                    panel2.revalidate();
+                    panel2.repaint();
+                    panel2.setLayout(new GridLayout(0,2));
+//                panel2.setAutoscrolls(true);
+                    String nof = tfnot.getText();
+                    System.out.println(nof);
+                    noOfThread = Integer.parseInt(nof);
+                    System.out.println("tt"+noOfThread);
+                    JTextPane ta[] =new JTextPane[noOfThread];
+                    JScrollPane jsp[] = new JScrollPane[noOfThread];
+                    for(int i=0;i<noOfThread;i++)
+                    {
+                        ta[i] = new JTextPane();
+                        ta[i].setMinimumSize(new Dimension(100,150));
+                        jsp[i] = new JScrollPane(ta[i]);
+//                    jsp[i].setMinimumSize(new Dimension(100,150));
+                        panel2.add(jsp[i]);
+
+                    }
+                    panel2.revalidate();
+                    panel2.repaint();
+                    //----------tread panel end-----------
+                    ////////
+
+                    ArrayList<Integer> a = new ArrayList<Integer>();
+                    int tofind =Integer.parseInt(tfToFind.getText());
+                    String arrayElement = tfArray.getText();
+                    String [] elements = arrayElement.split(" ");
+
+                    for(int i=0;i<elements.length;i++)
+                    {
+                        a.add(Integer.parseInt(elements[i]));
+                    }
+                    Collections.sort(a);
+                    int [] arr = new int[a.size()];
+                    for(int i = 0 ; i < a.size(); i ++)
+                    {
+                        arr[i]=a.get(i);
+                    }
+                    //array acheived
+                    int previdx=0;
+                    int sizearrpart = (arr.length)/noOfThread;
+                    int r;
+                    exposearch exparr [] = new exposearch[noOfThread+1];
+                    JTextArea txtareaarr[] = new JTextArea[noOfThread];
+
+//                txtareaarr[0]=taRes1;
+//                txtareaarr[1]=taRes2;
+//                txtareaarr[2]=taRes3;
+//                txtareaarr[3]=taRes4;
+                    int ta_counter=3;
+                    for(r = 1; r < noOfThread ; r++)
+                    {
+                        exparr[r-1] = new exposearch(arr,tofind,ta[r-1],previdx,r*sizearrpart-1,tfResult,noOfThread,r);
+                        exparr[r-1].start();
+                        previdx = r*sizearrpart ;
+                    }
+
+                    exparr[noOfThread] = new exposearch(arr,tofind,ta[ta.length-1],previdx,arr.length-1,tfResult,noOfThread,r);
+                    exparr[noOfThread].start();
+                    for(int l = 0 ; l<=noOfThread ;l++)
+                    {
+                        try {
+                            exparr[l].join();
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+                    }
+                    exposearch dummy = new exposearch(arr,tofind,ta[ta.length-1],previdx,arr.length-1,tfResult,noOfThread,r);
+                    // get other indexes
+                    if(dummy.foundatindex>-1){
+                        int arx[] = dummy.other_index(dummy.foundatindex);
+                        tfResult.setText("i was found at index "+arx[0]+" <-to-> "+arx[1]);
+                        dummy.foundatindex=Integer.MIN_VALUE;
+
+                    }
+                    else {
+                        tfResult.setText("i was not found sorry:");
+                    }
+                    tfArray.setText("");
+                    for(int i=0;i<a.size();i++)
+                    {
+                        tfArray.setText(tfArray.getText()+a.get(i)+" ");
+                    }
+                    System.gc();
+
+
                 }
             }
         });

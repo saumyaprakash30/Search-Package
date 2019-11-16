@@ -64,6 +64,7 @@ public class fibosearch extends Thread {
     public int[] other_index(int index)
     {
         int i= index;
+        System.out.println("meme");
         while(arr[i]==arr[index] && i<arr.length)
         {
             i++;
@@ -78,6 +79,8 @@ public class fibosearch extends Thread {
         }
         int leftmostindex = i+1;
         int [] indices = new int[]{leftmostindex,rightmostindex};
+        System.out.println(indices[0]);
+        System.out.println(indices[1]);
         return indices ;
     }
     //1 2 3 4 5 6 7 8 9 10 11 12 13

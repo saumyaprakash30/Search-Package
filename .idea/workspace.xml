@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdda4baf-b816-489c-a23d-93df5f2a8274" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/jumpSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/jumpSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/mainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/mainFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/mainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/mainFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/fibosearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/fibosearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/jumpSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/jumpSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -94,6 +100,14 @@
       <option name="presentableId" value="Default" />
       <updated>1571836847165</updated>
     </task>
+    <task id="LOCAL-00001" summary="commit #1 expo + fibo">
+      <created>1573925497141</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573925497141</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,6 +137,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit #1 expo + fibo" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit #1 expo + fibo" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -131,8 +149,23 @@
           <line>164</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java</url>
+          <line>312</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/SearchAlgo/fibosearch.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Search_Algo$mainFrame.ic" NAME="mainFrame Coverage Results" MODIFIED="1573926443909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.SearchAlgo.*</FILTER>
+    </SUITE>
   </component>
   <component name="masterDetails">
     <states>
