@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdda4baf-b816-489c-a23d-93df5f2a8274" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/Drawing$DrawCanvas$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/Drawing$DrawCanvas$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/Drawing$DrawCanvas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/Drawing$DrawCanvas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/Drawing.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/Drawing.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/fibosearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/fibosearch.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/SearchAlgo/Interpolation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,17 +41,15 @@
       </map>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="25" />
-    <option name="width" value="683" />
-    <option name="height" value="743" />
-  </component>
   <component name="ProjectId" id="1ThvwaH6F3M4KGronLdcTVz6XC8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="326" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunDashboard">
@@ -142,6 +140,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="commit #1 expo + fibo" />
     <MESSAGE value="commit #2 expo + fibo repaired" />
     <option name="LAST_COMMIT_MESSAGE" value="commit #2 expo + fibo repaired" />
@@ -153,11 +152,6 @@
           <url>file://$PROJECT_DIR$/src/com/SearchAlgo/Drawing.java</url>
           <line>164</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java</url>
-          <line>310</line>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/SearchAlgo/fibosearch.java</url>

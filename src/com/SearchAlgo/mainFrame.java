@@ -326,7 +326,84 @@ public class mainFrame {
 
 
                 }
+                else if(selected==3)
+                {
+                    panel2.removeAll();
+                    panel2.revalidate();
+                    panel2.repaint();
+                    panel2.setLayout(new GridLayout(0,2));
+//                panel2.setAutoscrolls(true);
+                    String nof = tfnot.getText();
+                    System.out.println(nof);
+                    noOfThread = Integer.parseInt(nof);
+                    System.out.println("tt"+noOfThread);
+                    JTextPane ta[] =new JTextPane[noOfThread];
+                    JScrollPane jsp[] = new JScrollPane[noOfThread];
+                    for(int i=0;i<noOfThread;i++)
+                    {
+                        ta[i] = new JTextPane();
+                        ta[i].setMinimumSize(new Dimension(100,150));
+                        jsp[i] = new JScrollPane(ta[i]);
+//                    jsp[i].setMinimumSize(new Dimension(100,150));
+                        panel2.add(jsp[i]);
+
+                    }
+                    panel2.revalidate();
+                    panel2.repaint();
+                    //----------tread panel end-----------
+
+                    ArrayList<Integer> a = new ArrayList<Integer>();
+                    int tofind =Integer.parseInt(tfToFind.getText());
+                    String arrayElement = tfArray.getText();
+                    String [] elements = arrayElement.split(" ");
+
+                    for(int i=0;i<elements.length;i++)
+                    {
+                        a.add(Integer.parseInt(elements[i]));
+                    }
+                    Collections.sort(a);
+                    tfResult.setText("");
+                    int [] arr = new int[a.size()];
+                    for(int i = 0 ; i < a.size(); i ++)
+                    {
+                        arr[i]=a.get(i);
+                    }
+                    // System.out.println(Arrays.toString(arr));
+                    int k=arr.length/noOfThread;
+                    // Semaphore s;
+                    // System.out.println(k);
+                    Interpolation[] ip;
+                    ip = new Interpolation[noOfThread];
+                    for(int i=0;i<noOfThread;i++)
+                    {
+                        int beg = i*k;
+                        int end ;
+                        if(i==noOfThread-1)
+                            end = arr.length-1;
+                        else end = i*k + k-1;
+                        ip[i] = new Interpolation(beg,end,tofind,arr,ta[i],tfResult);
+                        ip[i].start();
+                        try {
+                            ip[i].join();
+                        } catch (Exception e1) {
+                        }
+                    }
+//                for(int i=0;i<noOfThread;i++){
+//                try {
+//                    ip[i].join();
+//                } catch (Exception e) {
+//                }}
+
+                    if(tfResult.getText().equals(""))
+                        tfResult.setText("Not Found !");
+                    tfArray.setText("");
+                    for (Integer integer : a) {
+                        tfArray.setText(tfArray.getText() + integer + " ");
+                    }
+
+                }
             }
+
         });
     }
 
