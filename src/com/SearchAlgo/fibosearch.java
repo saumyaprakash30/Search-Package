@@ -91,7 +91,7 @@ public class fibosearch extends Thread {
     {
         int z ;
         z=fibMonaccianSearch(temparr,tofind,end-beg+1);
-        if(z+beg>0 && z+beg>foundatindex){foundatindex=z+beg;}
+        if(z+beg>=0 && z+beg>foundatindex){foundatindex=z+beg;}
     }
     public static int min(int x, int y)
     { return (x <= y)? x : y; }
