@@ -8,6 +8,7 @@ import java.awt.*;
 import java.time.Year;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.concurrent.Semaphore;
 
 public class jumpSearch extends Thread {
 
@@ -18,15 +19,17 @@ public class jumpSearch extends Thread {
     private JTextField tfResult;
     private int found =1;
     private int secElement;
+    Semaphore sem;
 
 
-    public jumpSearch(ArrayList<Integer> data, int tofind, int arraypart,JTextPane textArea, JTextField tfResult,int secElement) {
+    public jumpSearch(ArrayList<Integer> data, int tofind, int arraypart,JTextPane textArea, JTextField tfResult,int secElement,Semaphore sem) {
         this.data = data;
         this.tofind = tofind;
         this.textArea = textArea;
         this.arraypart = arraypart;
         this.tfResult = tfResult;
         this.secElement = secElement;
+        this.sem = sem;
 
 
 
@@ -44,7 +47,7 @@ public class jumpSearch extends Thread {
             return;
         while(data.get(Math.min(step,n)-1)< tofind)
         {
-
+            System.out.println("ff"+arraypart);
             prev =step;
 //            System.out.println(prev+"step: "+step);
             step+=(int)Math.floor(Math.sqrt(n));
@@ -60,6 +63,7 @@ public class jumpSearch extends Thread {
         if(found!=0)
             while(data.get(prev)<tofind)
             {
+                System.out.println("ss"+arraypart);
                 prev++;
                 if(prev == Math.min(step,n))
                 {
@@ -71,16 +75,26 @@ public class jumpSearch extends Thread {
 //        System.out.println("sss ");
         if(found!=0)
             while(prev<n)
+            {
+                System.out.println("tt"+arraypart);
                 if(data.get(prev).equals(tofind))
                 {
                     System.out.println(arraypart+"found"+(arraypart*secElement+prev+1));
                     res=Integer.toString((arraypart*secElement+prev+1));
-                    if(tfResult.getText().equals("Not Found !"))
-                        tfResult.setText(res+" ");
-                    else
+//
+                    try
+                    {
+                        sem.acquire();
                         tfResult.setText(tfResult.getText()+res+" ");
-                    prev++;
+                        sem.release();
+                    }catch (Exception e)
+                    {
+
+                    }
+
                 }
+                prev++;
+            }
 
 
         System.out.println("end"+arraypart);

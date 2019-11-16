@@ -1,5 +1,7 @@
 package com.SearchAlgo;
 
+import org.omg.PortableServer.THREAD_POLICY_ID;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.concurrent.Semaphore;
 
 public class mainFrame {
     private JTextField tfArray;
@@ -37,6 +40,9 @@ public class mainFrame {
                 int selected = cbSearchType.getSelectedIndex();
                 if(selected==0)
                 {
+
+                    //--------------------------jump Search ----------------------
+
                     //----------thread pannel--------------
                     panel2.removeAll();
                     panel2.revalidate();
@@ -61,6 +67,8 @@ public class mainFrame {
                     panel2.revalidate();
                     panel2.repaint();
                     //----------tread panel end-----------
+
+                    Semaphore sem = new Semaphore(1);
 
                     tfResult.setText("");
                     ArrayList<Integer> a = new ArrayList<Integer>();
@@ -94,7 +102,7 @@ public class mainFrame {
                         for(int j=0;j<temp.size();j++){
                             System.out.println(i+"temp"+temp.get(j));
                         }
-                        jS[i] = new jumpSearch(temp,tofind,i,ta[i],tfResult,k);
+                        jS[i] = new jumpSearch(temp,tofind,i,ta[i],tfResult,k,sem);
                         jS[i].start();
 
                     }
@@ -104,25 +112,35 @@ public class mainFrame {
                     {
                         tfArray.setText(tfArray.getText()+a.get(i)+" ");
                     }
-//                for(int i=0;i<4;i++)
-//                {
-//                    try
-//                    {
-//                        System.out.println("h");
-//                        jS[i].join();
-//                        System.out.println("h1"+i);
-//                    }
-//                    catch (Exception e1)
-//                    {
-//                        System.out.println(e1);
-//                    }
-//                }
+                for(int i=0;i<4;i++)
+                {
+                    try
+                    {
+                        System.out.println("h");
+                        jS[i].join();
+                        System.out.println("h1"+i);
+                    }
+                    catch (Exception e1)
+                    {
+                        System.out.println(e1);
+                    }
+                }
 
                     if(tfResult.getText().equals(""))
                         tfResult.setText("Not Found !");
+
+                    int []arr = new int[a.size()];
+                    for(int i=0;i<a.size();i++)
+                        arr[i]=a.get(i);
+
+                    new Drawing(arr,tofind);
                 }
+
                 else if(selected==1)
                 {
+                    //--------------------------fib Search ----------------------
+
+
                     //----------thread pannel--------------
                     panel2.removeAll();
                     panel2.revalidate();
@@ -171,10 +189,6 @@ public class mainFrame {
                     fibosearch fbarr [] = new fibosearch[noOfThread+1];
                     JTextArea txtareaarr[] = new JTextArea[noOfThread];
 
-//                txtareaarr[0]=taRes1;
-//                txtareaarr[1]=taRes2;
-//                txtareaarr[2]=taRes3;
-//                txtareaarr[3]=taRes4;
                     int ta_counter=3;
                     for(r = 1; r < noOfThread ; r++)
                     {
@@ -222,6 +236,7 @@ public class mainFrame {
         frame.setContentPane(new mainFrame().panel1);
         frame.setSize(600,500);
         frame.setMinimumSize(new Dimension(500,300));
+        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
 
