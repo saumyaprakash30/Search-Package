@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdda4baf-b816-489c-a23d-93df5f2a8274" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/SearchAlgo/Drawing_exponential.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/SearchAlgo/Interpolation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/Drawing_fibonacci$DrawCanvas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/Drawing_fibonacci$DrawCanvas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/exposearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/exposearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/fibosearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/fibosearch.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/Drawing_fibonacci.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/Drawing_fibonacci.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/exposearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/exposearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/fibosearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/fibosearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +23,16 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>noofthreads</find>
+      <find>.append(</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>noOfThread</replace>
+      <replace>.setText(textAreaspecific.getText() +</replace>
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -36,17 +42,15 @@
     </option>
   </component>
   <component name="ProjectId" id="1ThvwaH6F3M4KGronLdcTVz6XC8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="326" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.SearchAlgo" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -105,28 +109,7 @@
       <option name="project" value="LOCAL" />
       <updated>1573927314590</updated>
     </task>
-    <task id="LOCAL-00003" summary="commit #3 expo + fibo repaired">
-      <created>1573927491472</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1573927491472</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added Graphics! + Better text">
-      <created>1573973297372</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1573973297372</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Added Graphics! + Better text">
-      <created>1573973360069</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1573973360069</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,12 +140,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="commit #1 expo + fibo" />
     <MESSAGE value="commit #2 expo + fibo repaired" />
-    <MESSAGE value="commit #3 expo + fibo repaired" />
-    <MESSAGE value="Added Graphics!." />
-    <MESSAGE value="Added Graphics! + Better text" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Graphics! + Better text" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit #2 expo + fibo repaired" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -173,13 +154,8 @@
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java</url>
-          <line>318</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/SearchAlgo/fibosearch.java</url>
-          <line>70</line>
+          <line>65</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
