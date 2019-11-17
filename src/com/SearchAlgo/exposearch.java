@@ -84,7 +84,7 @@ public class exposearch extends Thread {
             int z ;
             arrayprinter(temparr,0, temparr.length);
             z=exponentialSearch(temparr,tofind,end-beg+1);
-            Drawing_fibonacci dr = new Drawing_fibonacci(temparr,tofind,arr_visual,t_num);
+            Drawing_exponential dr = new Drawing_exponential(temparr,tofind,arr_visual,t_num);
             if(z<0){z=Integer.MIN_VALUE;}
             else{foundatindex=z+beg;}
         }
@@ -107,7 +107,7 @@ public class exposearch extends Thread {
         }
         textAreaspecific.setText(textAreaspecific.getText()+"Repeated doubling index is " + i+"\n\n");
         // Call binary search for the found range.
-        textAreaspecific.setText(textAreaspecific.getText()+"Calling binary search from "+i/2+" to "+ Math.min(i, n)+"\n\n");
+        textAreaspecific.setText(textAreaspecific.getText()+"Calling binary search from (Repeated doubling index)/2 ie. from "+i/2+" to "+ Math.min(i, n)+"\n\n");
         int f =Arrays.binarySearch(arr, i/2,
                 Math.min(i, n), x);
         arr_visual.add(f);

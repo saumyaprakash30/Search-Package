@@ -318,6 +318,7 @@ public class mainFrame {
                     // get other indexes
                     if(dummy.foundatindex>-1){
                         int arx[] = dummy.other_index(dummy.foundatindex);
+
                         tfResult.setText("i was found at index "+arx[0]+" <-to-> "+arx[1]);
                         dummy.foundatindex=Integer.MIN_VALUE;
 

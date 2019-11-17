@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class Drawing_fibonacci extends JFrame  {
+public class Drawing_exponential extends JFrame  {
     public static  int CANVAS_WIDTH  ;
     public static  int CANVAS_HEIGHT ;
     public int []a;
@@ -25,7 +25,7 @@ public class Drawing_fibonacci extends JFrame  {
 
 
     // Constructor to set up the GUI components and event handlers
-    public Drawing_fibonacci(int []a, int tofind, ArrayList<Integer> idx_lst,int tnum) {
+    public Drawing_exponential(int []a, int tofind, ArrayList<Integer> idx_lst,int tnum) {
 
         this.a=a;
         this.tofind=tofind;
@@ -68,22 +68,22 @@ public class Drawing_fibonacci extends JFrame  {
         int i =0;
         int initp = 20+r1/2,initq = q1+s1+20,d=0,k=0;
         // Override paintComponent to perform your own painting
-            public DrawCanvas()
-            {
+        public DrawCanvas()
+        {
 
-                Timer t = new Timer(2500,new ActionListener(){
-                    public void actionPerformed(ActionEvent e)
-                    {
-                        if(i<idx_lst.size()){highlight=idx_lst.get(i);repaint();i++;};
-                    }
-                });
-                t.start();
-            }
+            Timer t = new Timer(2500,new ActionListener(){
+                public void actionPerformed(ActionEvent e)
+                {
+                    if(i<idx_lst.size()){highlight=idx_lst.get(i);repaint();i++;};
+                }
+            });
+            t.start();
+        }
         @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             int p = 20, q = 200, r = 30, s = 30;
-            for (int i = 0; i < a.length-1; i++) {
+            for (int i = 0; i < a.length; i++) {
                 g.setColor(Color.black);
                 g.drawRect(p, q, r, s);
                 g.setColor(Color.blue);
@@ -102,10 +102,9 @@ public class Drawing_fibonacci extends JFrame  {
                         g.setColor(Color.BLACK);
                         g.drawOval(p, q, 30, 30);
                     }
-                    }
-
+                }
                 if(a[i]==tofind)
-                    g.setColor(Color.RED);
+                g.setColor(Color.RED);
                 else
                     g.setColor(Color.blue);
                 g.drawString(Integer.toString(a[i]), (p + r / 2), q + 2 * s / 3);
@@ -114,7 +113,7 @@ public class Drawing_fibonacci extends JFrame  {
 
 
 
-                
+
 
 ////////////////////////////////////////////////////////////////
 //            int p = 20, q = 200, r = 30, s = 30;
@@ -248,8 +247,8 @@ public class Drawing_fibonacci extends JFrame  {
 
 //            setBackground(Color.BLACK);  // set background color for this JPanel
 
-            // Your custom painting codes. For example,
-            // Drawing primitive shapes
+// Your custom painting codes. For example,
+// Drawing primitive shapes
 //            g.setColor(Color.YELLOW);    // set the drawing color
 //            g.drawLine(30, 40, 100, 200);
 //            g.drawOval(150, 180, 10, 10);
