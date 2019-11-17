@@ -107,7 +107,7 @@ public class exposearch extends Thread {
         }
         textAreaspecific.setText(textAreaspecific.getText()+"Repeated doubling index is " + i+"\n\n");
         // Call binary search for the found range.
-        textAreaspecific.setText(textAreaspecific.getText()+"Calling binary search from (Repeated doubling index)/2 ie. from "+i/2+" to "+ Math.min(i, n)+"\n\n");
+        textAreaspecific.setText(textAreaspecific.getText()+"Calling binary search from (Repeated doubling index)/2 ie. "+i/2+" to "+ Math.min(i, n)+"\n\n");
         int f =Arrays.binarySearch(arr, i/2,
                 Math.min(i, n), x);
         arr_visual.add(f);

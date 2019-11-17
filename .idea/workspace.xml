@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdda4baf-b816-489c-a23d-93df5f2a8274" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/SearchAlgo/Interpolation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/exposearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/exposearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/mainFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/mainFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/mainFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/mainFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/exposearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/exposearch.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,16 +23,6 @@
         <option value="Class" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>noofthreads</find>
-      <find>.append(</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>noOfThread</replace>
-      <replace>.setText(textAreaspecific.getText() +</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
