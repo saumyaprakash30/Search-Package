@@ -15,6 +15,8 @@ public class exposearch extends Thread {
     private int [] temparr;
     private int beg;
     private int end;
+    private int t_num;
+    private ArrayList<Integer> arr_visual;
     //    private int noofthreads;
     public static int foundatindex=Integer.MIN_VALUE;
 
@@ -25,7 +27,7 @@ public class exposearch extends Thread {
         {
             pr= pr+" "+String.valueOf(arr[i])+" ";
         }
-        pr=pr+"\n";
+        pr=pr+"\n\n";
         textAreaspecific.setText(textAreaspecific.getText() +pr);
     }
 
@@ -38,11 +40,14 @@ public class exposearch extends Thread {
             this.beg = beg;
             this.end = end;
             this.temparr = new int[end-beg+1];
+            this.t_num=tnum;
             for(int i = 0 ; i<end-beg+1;i++)
             {
                 temparr[i]=arr[beg+i];
             }
+        this.arr_visual = new ArrayList<Integer>(temparr.length);
         }
+
         public int[] other_index(int index)
         {
             int i= index;
@@ -65,6 +70,7 @@ public class exposearch extends Thread {
             int leftmostindex = i+1;
             int [] indices = new int[]{leftmostindex,rightmostindex};
             return indices ;
+
         }
         //1 2 3 4 5 6 7 8 9 10 11 12 13
         //recieve into array the required part
@@ -78,7 +84,7 @@ public class exposearch extends Thread {
             int z ;
             arrayprinter(temparr,0, temparr.length);
             z=exponentialSearch(temparr,tofind,end-beg+1);
-
+            Drawing_fibonacci dr = new Drawing_fibonacci(temparr,tofind,arr_visual,t_num);
             if(z<0){z=Integer.MIN_VALUE;}
             else{foundatindex=z+beg;}
         }
@@ -86,22 +92,26 @@ public class exposearch extends Thread {
                                  int x, int n)
     {
         // If x is present at firt location itself
-        textAreaspecific.setText(textAreaspecific.getText()+" Comparing "+x+" with array value"+ arr[0]+"\n");
+        textAreaspecific.setText(textAreaspecific.getText()+"Step 1. Comparing "+x+" with array value"+ arr[0]+"\n\n");
         if (arr[0] == x)
-        {textAreaspecific.setText(textAreaspecific.getText()+" Found! returning! "+"\n");
+        {textAreaspecific.setText(textAreaspecific.getText()+" Found! returning! "+"\n\n");
         return 0;}
 
         // Find range for binary search by
         // repeated doubling
-        textAreaspecific.setText(textAreaspecific.getText()+" not found ! so now finding index by repeated doubling "+"\n");
+        textAreaspecific.setText(textAreaspecific.getText()+"Not found ! ,so now finding index by repeated doubling "+"\n\n");
         int i = 1;
-        while (i < n && arr[i] <= x)
-            i = i*2;
-        textAreaspecific.setText(textAreaspecific.getText()+"  repeated doubling index is " + i+"\n");
+        while (i < n && arr[i] <= x) {
+            i = i * 2;
+            arr_visual.add(i);
+        }
+        textAreaspecific.setText(textAreaspecific.getText()+"Repeated doubling index is " + i+"\n\n");
         // Call binary search for the found range.
-        textAreaspecific.setText(textAreaspecific.getText()+" Calling binary search from"+i/2+" to "+ Math.min(i, n)+"\n");
-        return Arrays.binarySearch(arr, i/2,
+        textAreaspecific.setText(textAreaspecific.getText()+"Calling binary search from "+i/2+" to "+ Math.min(i, n)+"\n\n");
+        int f =Arrays.binarySearch(arr, i/2,
                 Math.min(i, n), x);
+        arr_visual.add(f);
+        return  f;
     }
 }
 

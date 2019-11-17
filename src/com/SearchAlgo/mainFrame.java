@@ -20,6 +20,8 @@ public class mainFrame {
     private JPanel drawPanel;
     private JTextArea taRes1;
     private JTextField tfResult;
+    //
+
 
     private JTextField tfnot;
     private JPanel panel2;
@@ -27,8 +29,12 @@ public class mainFrame {
     private JButton searchButton;
     private JPanel panel3;
     private int noOfThread;
+    public int array_of_inputs[];
     JTextArea ta[];
     JScrollPane jsp[];
+    public int [] getArray_of_inputs(){
+        return array_of_inputs;
+    }
 
 
     public mainFrame() {
@@ -180,6 +186,7 @@ public class mainFrame {
                     {
                         arr[i]=a.get(i);
                     }
+                    array_of_inputs=arr.clone();
                     //array acheived
                     int previdx=0;
                     int sizearrpart = (arr.length)/noOfThread;
@@ -199,7 +206,7 @@ public class mainFrame {
                         previdx = r*sizearrpart ;
                     }
 
-                    fbarr[noOfThread] = new fibosearch(arr,tofind,ta[ta.length-1],previdx,arr.length-1,tfResult,noOfThread,r);
+                    fbarr[noOfThread] = new fibosearch(arr,tofind,ta[ta.length-1],previdx,arr.length-1,tfResult,noOfThread,noOfThread);
                     fbarr[noOfThread].start();
                     for(int l = 0 ; l<=noOfThread ;l++)
                     {
@@ -229,6 +236,7 @@ public class mainFrame {
                         tfArray.setText(tfArray.getText()+a.get(i)+" ");
                     }
                     System.gc();
+
 
                 }
                 else if(selected==2)
@@ -294,7 +302,7 @@ public class mainFrame {
                         previdx = r*sizearrpart ;
                     }
 
-                    exparr[noOfThread] = new exposearch(arr,tofind,ta[ta.length-1],previdx,arr.length-1,tfResult,noOfThread,r);
+                    exparr[noOfThread] = new exposearch(arr,tofind,ta[ta.length-1],previdx,arr.length-1,tfResult,noOfThread,noOfThread);
                     exparr[noOfThread].start();
                     for(int l = 0 ; l<=noOfThread ;l++)
                     {
@@ -333,7 +341,7 @@ public class mainFrame {
     public static void main(String[] args) {
         JFrame frame = new JFrame();
         frame.setContentPane(new mainFrame().panel1);
-        frame.setSize(600,500);
+        frame.setSize(900,500);
         frame.setMinimumSize(new Dimension(500,300));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setVisible(true);
