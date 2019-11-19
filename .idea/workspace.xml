@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdda4baf-b816-489c-a23d-93df5f2a8274" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/jumpSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project/com/SearchAlgo/jumpSearch.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/Drawing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/Drawing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/jumpSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/jumpSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/SearchAlgo/jumpSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2981">
-              <caret line="66" column="60" lean-forward="true" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="60" />
+            <state relative-caret-position="252">
+              <caret line="67" column="68" lean-forward="true" selection-start-line="67" selection-start-column="62" selection-end-line="67" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,11 +41,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/SearchAlgo/Drawing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="177" column="25" lean-forward="true" selection-start-line="177" selection-start-column="25" selection-end-line="177" selection-end-column="25" />
+            <state relative-caret-position="117">
+              <caret line="143" column="38" selection-start-line="143" selection-start-column="38" selection-end-line="143" selection-end-column="38" />
               <folding>
-                <element signature="e#4072#4073#0" expanded="true" />
-                <element signature="e#4129#4130#0" expanded="true" />
+                <element signature="e#4264#4265#0" expanded="true" />
+                <element signature="e#4321#4322#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,6 +65,7 @@
       <find>Now</find>
       <find>red</find>
       <find>jump</find>
+      <find>small</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -80,8 +79,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/SearchAlgo/jumpSearch.java" />
         <option value="$PROJECT_DIR$/src/com/SearchAlgo/mainFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/SearchAlgo/jumpSearch.java" />
         <option value="$PROJECT_DIR$/src/com/SearchAlgo/Drawing.java" />
       </list>
     </option>
@@ -218,7 +217,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32899022" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -288,7 +287,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/SearchAlgo/Drawing.java</url>
-          <line>265</line>
+          <line>290</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
@@ -316,8 +315,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SearchAlgo/jumpSearch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2981">
-          <caret line="66" column="60" lean-forward="true" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="60" />
+        <state relative-caret-position="252">
+          <caret line="67" column="68" lean-forward="true" selection-start-line="67" selection-start-column="62" selection-end-line="67" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -326,11 +325,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SearchAlgo/Drawing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="177" column="25" lean-forward="true" selection-start-line="177" selection-start-column="25" selection-end-line="177" selection-end-column="25" />
+        <state relative-caret-position="117">
+          <caret line="143" column="38" selection-start-line="143" selection-start-column="38" selection-end-line="143" selection-end-column="38" />
           <folding>
-            <element signature="e#4072#4073#0" expanded="true" />
-            <element signature="e#4129#4130#0" expanded="true" />
+            <element signature="e#4264#4265#0" expanded="true" />
+            <element signature="e#4321#4322#0" expanded="true" />
           </folding>
         </state>
       </provider>

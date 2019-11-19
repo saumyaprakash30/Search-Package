@@ -65,7 +65,7 @@ public class jumpSearch extends Thread {
         String res = "";
         int n =data.size();
         int prev=0;int step = (int)Math.floor(Math.sqrt(n));
-        String arr="\nInitialization: prev = "+prev+", step = "+step+", Tofind = "+tofind+"\n";
+        String arr="\nInitialization: prev = "+prev+", step = \u221A"+data.size()+" = "+step+", Tofind = "+tofind+"\n";
         try {
             StyleConstants.setForeground(center,Color.red);
             StyleConstants.setFontSize(center,12);
