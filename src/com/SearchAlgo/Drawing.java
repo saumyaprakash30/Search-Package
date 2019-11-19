@@ -59,13 +59,70 @@ public class Drawing extends JFrame  {
      */
     private class DrawCanvas extends JPanel  {
 
+        int n ;
         private int p1 = 20, q1 = 200, r1= 30, s1 = 30;
-        int initp = 20+r1/2,initq = q1+s1+20,d=0,k=0;
+        int initp = 20+r1/2,initq = (q1+s1),d=0,k=0;
+        int currp=initp,currq=initq;
+        int step = (int)Math.sqrt(a.length);
+        int prev=0,sstep,found =1;
+        int countStep=0,countSmallStep;
+        int coutfound=0;
+        int goback=1;
         // Override paintComponent to perform your own painting
             public DrawCanvas()
             {
+                n= a.length;
+                sstep = (int)Math.floor(Math.sqrt(n));
+                System.out.println(n+"[[[]]]"+sstep);
+                try{
 
-                Timer t = new Timer(10,new ActionListener(){
+                    while(a[Math.min(sstep,n)-1]< tofind)
+                    {
+                        prev = step;
+                        sstep+=(int)Math.floor(Math.sqrt(n));
+
+                        if(prev>=n) {
+                            found = 0;
+                            break;
+                        }
+                        countStep++;
+                    }
+
+                    if(found!=0)
+                    {
+                        while(a[prev]<tofind)
+                        {
+                            prev++;
+                            if(prev == Math.min(sstep,n))
+                            {
+                                found=0;
+                                break;
+
+                            }
+                            countSmallStep++;
+                        }
+
+                    }
+
+                    if(found!=0){
+                        while(prev<n){
+                            if(a[prev]==tofind){
+
+                            }
+                            prev++;
+                            coutfound++;
+                        }
+                    }
+
+                }catch (Exception e){
+                    System.out.println(n+"[[[-"+tofind  +"-]]]"+sstep);
+                    for (int i=0;i<n;i++)
+                        System.out.println("::--"+a[i]);
+                    System.out.println(sstep+" ::::::::::"+n);
+                }
+
+                System.out.println(countStep+" .."+countSmallStep+".."+coutfound);
+                Timer t = new Timer(20,new ActionListener(){
                     public void actionPerformed(ActionEvent e)
                     {
                         repaint();
@@ -73,11 +130,14 @@ public class Drawing extends JFrame  {
                 });
                 t.start();
             }
+
+
         @Override
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
 
             int p = 20, q = 200, r = 30, s = 30;
+
             for (int i = 0; i < a.length; i++) {
                 g.setColor(Color.black);
                 g.drawRect(p, q, r, s);
@@ -89,12 +149,53 @@ public class Drawing extends JFrame  {
             }
 
 
-            g.fillOval(initp+d,initq+d,5,5);
 
-//            k++;
+            if(countStep>=0){
+                if (d<(r*step)/2)
+                    k++;
+                else k--;
+                if(d==step*r)
+                {
+                    d=0;
+                    currp=currp+step*r;
+                    countStep--;
+                }
+                else d++;
 
-            if(d>200) d-- ;
-            else d++;
+            }
+
+//            if(countStep<0 && countSmallStep>0){
+//                if(goback==1) {
+//
+//                    g.fillOval(currp+d,currq+k,10,10);
+//
+//                    if(d>step*r/2) k++;
+//                    else k--;
+//                    if(d>currp-step*r) d--;
+//                    else{
+//                        d=0;
+//                        currp=currp+step*r;
+//                        goback=0;
+//                    }
+//                }
+//                else{
+//                    if (d<(r*step)/2)
+//                        k++;
+//                    else k--;
+//                    if(d==step*r)
+//                    {
+//                        d=0;
+//                        currp=currp+step*r;
+//
+//                    }
+//                    else d++;
+//                }
+//
+//
+//
+//
+//            }
+
                 
 
 ////////////////////////////////////////////////////////////////

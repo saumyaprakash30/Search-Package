@@ -106,10 +106,11 @@ public class mainFrame {
                         }
 
                         for(int j=0;j<temp.size();j++){
-                            System.out.println(i+"temp"+temp.get(j));
+                            System.out.println(i+"temp"+temp.size());
                         }
                         jS[i] = new jumpSearch(temp,tofind,i,ta[i],tfResult,k,sem);
                         jS[i].start();
+
 
                     }
 
@@ -136,8 +137,8 @@ public class mainFrame {
                         tfResult.setText("Not Found !");
 
                     int []arr = new int[a.size()];
-                    for(int i=0;i<a.size();i++)
-                        arr[i]=a.get(i);
+                    for(int k1=0;k1<a.size();k1++)
+                        arr[k1]=a.get(k1);
 
                     new Drawing(arr,tofind);
                 }
