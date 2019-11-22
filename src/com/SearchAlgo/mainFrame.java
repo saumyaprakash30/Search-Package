@@ -391,7 +391,7 @@ public class mainFrame {
                         if(i==noOfThread-1)
                             end = arr.length-1;
                         else end = i*k + k-1;
-                        ip[i] = new Interpolation(beg,end,tofind,arr,ta[i],tfResult);
+                        ip[i] = new Interpolation(beg,end,i,tofind,arr,ta[i],tfResult);
                         ip[i].start();
                         try {
                             ip[i].join();
