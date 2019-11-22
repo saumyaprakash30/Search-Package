@@ -191,7 +191,7 @@ public class fibosearch extends Thread {
 
                 else {
                     try {
-                        textAreaspecific.setText(textAreaspecific.getText() +"Yay! found at! index " + i+beg + " of the local array \n\n");
+                        textAreaspecific.setText(textAreaspecific.getText() +"Yay! found at! index " + i + " of the local array \n\n");
                     } catch (NullPointerException c) {
                         System.out.println("fib num print");
                     }

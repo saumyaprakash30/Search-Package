@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.util.Collections;
 
 
+import static java.lang.Math.abs;
 import static java.lang.Thread.sleep;
 
 public class Drawing extends JFrame  {
@@ -65,9 +66,10 @@ public class Drawing extends JFrame  {
         int currp=initp,currq=initq;
         int step = (int)Math.sqrt(a.length);
         int prev=0,sstep,found =1;
-        int countStep=0,countSmallStep;
+        int countStep=0,countSmallStep=0;
         int coutfound=0;
         int goback=1;
+        int foundat;
         // Override paintComponent to perform your own painting
             public DrawCanvas()
             {
@@ -78,9 +80,9 @@ public class Drawing extends JFrame  {
 
                     while(a[Math.min(sstep,n)-1]< tofind)
                     {
-                        prev = step;
+                        prev = sstep;
                         sstep+=(int)Math.floor(Math.sqrt(n));
-
+                        System.out.println(sstep);
                         if(prev>=n) {
                             found = 0;
                             break;
@@ -108,11 +110,12 @@ public class Drawing extends JFrame  {
                         while(prev<n){
                             if(a[prev]==tofind){
 
-                            }
+                            }else break;
                             prev++;
                             coutfound++;
                         }
                     }
+                    foundat = countStep*step+countSmallStep;
 
                 }catch (Exception e){
                     System.out.println(n+"[[[-"+tofind  +"-]]]"+sstep);
@@ -121,8 +124,8 @@ public class Drawing extends JFrame  {
                     System.out.println(sstep+" ::::::::::"+n);
                 }
 
-                System.out.println(countStep+" .."+countSmallStep+".."+coutfound);
-                Timer t = new Timer(20,new ActionListener(){
+                System.out.println(countStep+" .."+countSmallStep+".."+coutfound+"s"+foundat);
+                Timer t = new Timer(15,new ActionListener(){
                     public void actionPerformed(ActionEvent e)
                     {
                         repaint();
@@ -138,19 +141,14 @@ public class Drawing extends JFrame  {
 
             int p = 20, q = 200, r = 30, s = 30;
 
-            for (int i = 0; i < a.length; i++) {
-                g.setColor(Color.black);
-                g.drawRect(p, q, r, s);
-                g.setColor(Color.blue);
-                if (a[i] == tofind)
-                    g.setColor(Color.RED);
-                g.drawString(Integer.toString(a[i]), (p + r / 2), q + 2 * s / 3);
-                p += r;
-            }
+            g.drawString("Step Size = \u221A"+a.length+" = "+step,(r*a.length)/2,150);
+            g.drawString("To find = "+tofind,(r*a.length)/2,180);
+
 
 
 
             if(countStep>=0){
+                g.fillOval(currp+d,currq+k,10,10);
                 if (d<(r*step)/2)
                     k++;
                 else k--;
@@ -163,38 +161,65 @@ public class Drawing extends JFrame  {
                 else d++;
 
             }
+            else if((countSmallStep)>=0){
+                if(goback==1){
+                    g.fillOval(currp+d,currq+k,10,10);
+                    if(abs(d)<abs((r*step)/2)) k++;
+                    else k--;
+                    if(abs(d)==step*r){
+                        d=0;
+                        currp=currp-r*step;
+                        goback=0;
+                    }else{
+                        d--;
+                    }
 
-//            if(countStep<0 && countSmallStep>0){
-//                if(goback==1) {
-//
-//                    g.fillOval(currp+d,currq+k,10,10);
-//
-//                    if(d>step*r/2) k++;
-//                    else k--;
-//                    if(d>currp-step*r) d--;
-//                    else{
-//                        d=0;
-//                        currp=currp+step*r;
-//                        goback=0;
-//                    }
-//                }
-//                else{
-//                    if (d<(r*step)/2)
-//                        k++;
-//                    else k--;
-//                    if(d==step*r)
-//                    {
-//                        d=0;
-//                        currp=currp+step*r;
-//
-//                    }
-//                    else d++;
-//                }
-//
-//
-//
-//
-//            }
+                }
+                else{
+                    g.fillOval(currp+d,currq+k,10,10);
+                    if (d<(r)/2)
+                        k++;
+                    else k--;
+                    if(d==r)
+                    {
+                        d=0;
+                        currp=currp+r;
+                        countSmallStep--;
+                    }
+                    else d++;
+
+                }
+            }
+            else if(coutfound-1>0){
+                g.fillOval(currp+d,currq+k,10,10);
+                if (d<(r)/2)
+                    k++;
+                else k--;
+                if(d==r)
+                {
+                    d=0;
+                    currp=currp+r;
+                    coutfound--;
+                    foundat++;
+                }
+                else d++;
+
+            }
+            for (int i = 0; i < a.length; i++) {
+                g.setColor(Color.black);
+                g.drawRect(p, q, r, s);
+                g.setColor(Color.blue);
+                if (a[i] == tofind && foundat>=i)
+                {
+                    g.setColor(Color.RED);
+
+                }
+                g.drawString(Integer.toString(a[i]), (p + r / 2), q + 2 * s / 3);
+                p += r;
+            }
+
+
+
 
                 
 
