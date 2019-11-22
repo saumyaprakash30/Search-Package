@@ -92,7 +92,7 @@ public class Drawing_exponential extends JFrame  {
                     g.setColor(Color.RED);
                     g.drawOval(p,q,30,30);}
 
-                if(highlight>0 &&highlight<a.length){
+                if(highlight>=0 &&highlight<a.length){
                     if(a[i]==a[highlight] && a[i] == tofind)
                     {
                         g.setColor(Color.ORANGE);

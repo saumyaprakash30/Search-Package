@@ -92,6 +92,7 @@ public class exposearch extends Thread {
                                  int x, int n)
     {
         // If x is present at firt location itself
+        arr_visual.add(0);
         textAreaspecific.setText(textAreaspecific.getText()+"Step 1. Comparing "+x+" with array value"+ arr[0]+"\n\n");
         if (arr[0] == x)
         {textAreaspecific.setText(textAreaspecific.getText()+" Found! returning! "+"\n\n");
@@ -99,7 +100,7 @@ public class exposearch extends Thread {
 
         // Find range for binary search by
         // repeated doubling
-        textAreaspecific.setText(textAreaspecific.getText()+"Not found ! ,so now finding index by repeated doubling "+"\n\n");
+        textAreaspecific.setText(textAreaspecific.getText()+"Step 2.Not found ! ,so now finding index by repeated doubling "+"\n\n");
         int i = 1;
         while (i < n && arr[i] <= x) {
             i = i * 2;
@@ -110,6 +111,7 @@ public class exposearch extends Thread {
         textAreaspecific.setText(textAreaspecific.getText()+"Calling binary search from (Repeated doubling index)/2 ie. "+i/2+" to "+ Math.min(i, n)+"\n\n");
         int f =Arrays.binarySearch(arr, i/2,
                 Math.min(i, n), x);
+        if(f>-1)
         arr_visual.add(f);
         return  f;
     }
