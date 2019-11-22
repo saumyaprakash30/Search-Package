@@ -260,7 +260,7 @@ public class jumpSearch extends Thread {
 
 
                     System.out.println(arraypart+"found"+(arraypart*secElement+prev+1));
-                    res=Integer.toString((arraypart*secElement+prev+1));
+                    res=Integer.toString((arraypart*secElement+prev));
 //
                     try
                     {

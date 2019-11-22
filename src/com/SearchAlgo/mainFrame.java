@@ -6,9 +6,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Scanner;
 import java.util.concurrent.Semaphore;
 
 public class mainFrame {
@@ -27,11 +30,14 @@ public class mainFrame {
     private JPanel panel2;
     private JComboBox cbSearchType;
     private JButton searchButton;
+    private JButton button1;
     private JPanel panel3;
     private int noOfThread;
     public int array_of_inputs[];
     JTextArea ta[];
     JScrollPane jsp[];
+    JFileChooser fc= new JFileChooser();
+    String data="";
     public int [] getArray_of_inputs(){
         return array_of_inputs;
     }
@@ -64,6 +70,7 @@ public class mainFrame {
                     for(int i=0;i<noOfThread;i++)
                     {
                         ta[i] = new JTextPane();
+                        ta[i].setEditable(false);
                         ta[i].setMinimumSize(new Dimension(100,150));
                         jsp[i] = new JScrollPane(ta[i]);
 //                    jsp[i].setMinimumSize(new Dimension(100,150));
@@ -79,7 +86,13 @@ public class mainFrame {
                     tfResult.setText("");
                     ArrayList<Integer> a = new ArrayList<Integer>();
                     int tofind =Integer.parseInt(tfToFind.getText());
-                    String arrayElement = tfArray.getText();
+
+                    String arrayElement = "";
+                    if(fc!=null){
+                        arrayElement = data;
+                    }else{
+                        arrayElement = tfArray.getText();
+                    }
                     String [] elements = arrayElement.split(" ");
                     for(int i=0;i<elements.length;i++)
                     {
@@ -161,6 +174,7 @@ public class mainFrame {
                     for(int i=0;i<noOfThread;i++)
                     {
                         ta[i] = new JTextPane();
+                        ta[i].setEditable(false);
                         ta[i].setMinimumSize(new Dimension(100,150));
                         jsp[i] = new JScrollPane(ta[i]);
 //                    jsp[i].setMinimumSize(new Dimension(100,150));
@@ -173,8 +187,13 @@ public class mainFrame {
                     ////////
 
                     ArrayList<Integer> a = new ArrayList<Integer>();
+                    String arrayElement = "";
+                    if(fc!=null){
+                        arrayElement = data;
+                    }else{
+                        arrayElement = tfArray.getText();
+                    }
                     int tofind =Integer.parseInt(tfToFind.getText());
-                    String arrayElement = tfArray.getText();
                     String [] elements = arrayElement.split(" ");
 
                     for(int i=0;i<elements.length;i++)
@@ -258,6 +277,7 @@ public class mainFrame {
                     for(int i=0;i<noOfThread;i++)
                     {
                         ta[i] = new JTextPane();
+                        ta[i].setEditable(false);
                         ta[i].setMinimumSize(new Dimension(100,150));
                         jsp[i] = new JScrollPane(ta[i]);
 //                    jsp[i].setMinimumSize(new Dimension(100,150));
@@ -271,7 +291,13 @@ public class mainFrame {
 
                     ArrayList<Integer> a = new ArrayList<Integer>();
                     int tofind =Integer.parseInt(tfToFind.getText());
-                    String arrayElement = tfArray.getText();
+                    String arrayElement = "";
+                    if(fc!=null){
+                        arrayElement = data;
+                    }else{
+                        arrayElement = tfArray.getText();
+                    }
+
                     String [] elements = arrayElement.split(" ");
 
                     for(int i=0;i<elements.length;i++)
@@ -352,6 +378,7 @@ public class mainFrame {
                     for(int i=0;i<noOfThread;i++)
                     {
                         ta[i] = new JTextPane();
+                        ta[i].setEditable(false);
                         ta[i].setMinimumSize(new Dimension(100,150));
                         jsp[i] = new JScrollPane(ta[i]);
 //                    jsp[i].setMinimumSize(new Dimension(100,150));
@@ -364,7 +391,12 @@ public class mainFrame {
 
                     ArrayList<Integer> a = new ArrayList<Integer>();
                     int tofind =Integer.parseInt(tfToFind.getText());
-                    String arrayElement = tfArray.getText();
+                    String arrayElement = "";
+                    if(fc!=null){
+                        arrayElement = data;
+                    }else{
+                        arrayElement = tfArray.getText();
+                    }
                     String [] elements = arrayElement.split(" ");
 
                     for(int i=0;i<elements.length;i++)
@@ -414,6 +446,24 @@ public class mainFrame {
                 }
             }
 
+        });
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+                fc.showSaveDialog(null);
+                String path = fc.getSelectedFile().getAbsolutePath();
+                File fp =new File(path);
+
+                try {
+                    Scanner sc = new Scanner(fp);
+                    sc.useDelimiter("\\Z");
+                    data = sc.next();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                tfArray.setText(data);
+            }
         });
     }
 
