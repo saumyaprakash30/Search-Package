@@ -37,6 +37,7 @@ public class mainFrame {
     JTextArea ta[];
     JScrollPane jsp[];
     JFileChooser fc= new JFileChooser();
+
     String data="";
     public int [] getArray_of_inputs(){
         return array_of_inputs;
@@ -44,6 +45,7 @@ public class mainFrame {
 
 
     public mainFrame() {
+        fc=null;
 
 
         searchButton.addActionListener(new ActionListener() {
@@ -90,9 +92,12 @@ public class mainFrame {
                     String arrayElement = "";
                     if(fc!=null){
                         arrayElement = data;
+                        fc=null;
                     }else{
                         arrayElement = tfArray.getText();
+
                     }
+                    System.out.println("............"+arrayElement);
                     String [] elements = arrayElement.split(" ");
                     for(int i=0;i<elements.length;i++)
                     {
@@ -450,19 +455,30 @@ public class mainFrame {
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                fc= new JFileChooser();
+                int res=  fc.showSaveDialog(null);
 
-                fc.showSaveDialog(null);
-                String path = fc.getSelectedFile().getAbsolutePath();
-                File fp =new File(path);
+                if(res==JFileChooser.CANCEL_OPTION)
+                {
+                    fc=null;
 
-                try {
-                    Scanner sc = new Scanner(fp);
-                    sc.useDelimiter("\\Z");
-                    data = sc.next();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
                 }
-                tfArray.setText(data);
+                else
+                {
+                    String path = fc.getSelectedFile().getAbsolutePath();
+                    System.out.println(path);
+                    File fp =new File(path);
+
+                    try {
+                        Scanner sc = new Scanner(fp);
+                        sc.useDelimiter("\\Z");
+                        data = sc.next();
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
+                    tfArray.setText(data);
+                }
+
             }
         });
     }
